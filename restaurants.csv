@@ -1,13 +1,13 @@
-city,restaurant,opening_status
-Washingtonville,Subway,False
-Washingtonville,Betty's Country Kitchen,False
-Washingtonville,Brother Bruno Pizza,False
-Washingtonville,Kam Fung,False
-Washingtonville,Stewart's Shops,False
-Washingtonville,F & J Pizzeria,False
-Washingtonville,Dunkin',False
-Washingtonville,La Villa Mexican Restaurant & Bar,False
-Washingtonville,Amada's Kitchen AUTHENTIC MEXICAN food,False
-Washingtonville,Sun Hing,False
-Washingtonville,Mystic Cafe,False
-Washingtonville,Positano Italian Restaurant and Pizzeria,False
+city,restaurant,opening_status,latitude,longitude
+Washingtonville,Subway,True,41.427352,-74.1691546
+Washingtonville,Betty's Country Kitchen,True,41.4268604,-74.16911999999999
+Washingtonville,Brother Bruno Pizza,True,41.429639,-74.16324139999999
+Washingtonville,Kam Fung,True,41.4291532,-74.16307929999999
+Washingtonville,Stewart's Shops,True,41.4282462,-74.1655073
+Washingtonville,F & J Pizzeria,True,41.428064,-74.166618
+Washingtonville,Dunkin',True,41.4274599,-74.169128
+Washingtonville,La Villa Mexican Restaurant & Bar,True,41.425321,-74.1674566
+Washingtonville,Amada's Kitchen AUTHENTIC MEXICAN food,True,41.4276999,-74.1661306
+Washingtonville,Sun Hing,True,41.4280498,-74.1665325
+Washingtonville,Mystic Cafe,True,41.4281019,-74.1667985
+Washingtonville,Positano Italian Restaurant and Pizzeria,True,41.4271977,-74.1464146

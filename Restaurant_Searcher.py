@@ -27,15 +27,17 @@ def restaurants_searcher(state_name, city_name):
     city_restaurants_info = response.json()
     result = {}
     for restaurant in city_restaurants_info["results"]:
+        name = restaurant["name"]
+        lat = restaurant["geometry"]["location"]["lat"]
+        lng = restaurant["geometry"]["location"]["lng"]
         try:
-            name = restaurant["name"]
             opening = restaurant["opening_hours"]["open_now"]
-            result[name] = opening
+            result[name] = [opening, lat, lng]
         except:
-            name = restaurant["name"]
-            result[name] = None
-    # print(city_url)
+            result[name] = [None, lat, lng]
+    print(city_url)
     return result
+
 
 def restaurants_csv_generater(state_name, city_name):
     if " " not in state_name:
@@ -54,12 +56,16 @@ def restaurants_csv_generater(state_name, city_name):
         city_name = " ".join(city_name)
 
     with open("restaurants.csv", "w") as fout:
-        fieldnames = ['city', 'restaurant', 'opening_status']
+        fieldnames = ['city', 'restaurant', 'opening_status', 'latitude', 'longitude']
         dw = csv.DictWriter(fout, fieldnames)
         dw.writeheader()
         restaurants_info = restaurants_searcher(state_name, city_name)
-        dw.writerows([{fieldnames[0]: city_name, fieldnames[1]: restaurant,
-                       fieldnames[2]: restaurants_info[restaurant]} for restaurant in restaurants_info])
+        dw.writerows([{fieldnames[0]: city_name,
+                       fieldnames[1]: restaurant,
+                       fieldnames[2]: restaurants_info[restaurant][0],
+                       fieldnames[3]: restaurants_info[restaurant][1],
+                       fieldnames[4]: restaurants_info[restaurant][2]}
+                      for restaurant in restaurants_info])
 
 
 if __name__ == "__main__":
