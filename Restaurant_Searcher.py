@@ -61,5 +61,6 @@ def restaurants_csv_generater(state_name, city_name):
         dw.writerows([{fieldnames[0]: city_name, fieldnames[1]: restaurant,
                        fieldnames[2]: restaurants_info[restaurant]} for restaurant in restaurants_info])
 
+
 if __name__ == "__main__":
     restaurants_csv_generater("new york", "washingtonville")
