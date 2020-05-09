@@ -25,7 +25,13 @@ def restaurants_searcher(state_name, city_name):
         state_name[0] = state_name[0][0].upper() + state_name[0][1:].lower()
         state_name[1] = state_name[1][0].upper() + state_name[1][1:].lower()
         state_name = " ".join(state_name)
-    city_name = city_name[0].upper() + city_name[1:].lower()
+    if " " not in city_name:
+        city_name = city_name[0].upper() + city_name[1:].lower()
+    else:
+        city_name = city_name.split()
+        city_name[0] = city_name[0][0].upper() + city_name[0][1:].lower()
+        city_name[1] = city_name[1][0].upper() + city_name[1][1:].lower()
+        city_name = " ".join(city_name)
     state_city_location_dict = city_locator()
     location_tup = state_city_location_dict[state_name][city_name]
     city_url = google_url + "location=" + location_tup[0] + "," + location_tup[1] \
