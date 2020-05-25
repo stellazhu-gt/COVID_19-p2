@@ -7,7 +7,7 @@ from US_city_extracter import city_locator
 import csv
 
 google_url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?"
-api_key = "AIzaSyCQ1URNVCMsTp3bZAuIP0WG8Ljto28WEko"
+api_key = "***"
 
 
 def restaurants_searcher(state_name, city_name):
